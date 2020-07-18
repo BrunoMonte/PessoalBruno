@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Monte VueJs</title>
+</head>
+<link rel="stylesheet" href="estilo.css">
+    
+<body>
+    <div id="app">      
+        <img v-bind:src="foto_perfil" 
+            v-bind:title="nomeFoto">   <!--v-bind, para considerar ligação do data-->
+         
+        <hr>
+        <a v-bind:href='url'>
+            Linkedin
+        </a>
+            
+        
+        <a v-bind:href='urlgit'>
+            GitHub
+        </a>
+    
+        
+        <p v-html="texto_biografia"></p>            <!--Diretiva html, para referenciar la no data-->
+
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!--Primeiro carrega comando, após faz script-->
+
+    <script>
+        new Vue ({          
+            
+            el: '#app',    
+            data:{              
+                foto_perfil: "fototeste.png",
+                nomeFoto: "Bruno Aguiar",
+                url: 'https://www.linkedin.com/in/bruno-aguiar-01b5481aa/',
+                urlgit: 'https://github.com/BrunoMonte',               
+                texto_biografia: 'Nascido e criado  na cidade de Recife-PE,',
+            }
+            
+        })
+
+
+    </script>
+
+    
+</body>
+</html>
